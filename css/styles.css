@@ -302,6 +302,9 @@ padding-bottom: 120px;
     margin-right: 24px;
 
 }
+.modal-items:not(:nth-child(4n)) {
+    margin-bottom: 8px;
+}
 .third-container {
     display: flex;
     align-items: center;
@@ -573,6 +576,7 @@ padding-bottom: 120px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    padding: 72px 24px 24px 24px;
 }
 
 .modal-close-btn-icon {
@@ -617,13 +621,6 @@ pointer-events: none;
 }
 .footer-form-email {
     padding: 8px 0px 8px 16px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 2;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
@@ -631,8 +628,16 @@ pointer-events: none;
     background-color: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.footer-form-email::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+}
 .footer-form-email:focus{
-    outline: none;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -674,7 +679,6 @@ pointer-events: none;
     margin-left: 16px;
 }
 .modal-p {
-    margin-top:72px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -683,56 +687,59 @@ pointer-events: none;
     color: var(--dark-color);
     margin-bottom: 16px;
 }
-.modal-form {
-    padding-left: 24px;
-    padding-right: 24px;
-}
 .modal-form-input {
-    margin-top: 4px;
     width: 100%;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     padding-left: 38px;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-input:focus, .modal-form-comment:focus  {
     outline: none;
     border: 1px solid var(--primary-brand-color);
 }
 .modal-form-comment {
+    display: block;
     width: 100%;
-    margin-top: 4px;
     height: 120px;
     padding-left: 16px;
     padding-top: 8px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    resize: none;
+}
+.modal-form-comment::placeholder {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(117, 117, 117, 0.5);
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    margin-bottom: 16px;
 }
 .name-form {
+    display: block;
+    margin-bottom: 4px;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--subtle-text-color);
+
 }
 .modal-input {
+    display: block;
     position: relative;
 }
 .modal-input-icon {
     position: absolute;
     top:50%;
-    left:0;
+    left:16px;
     transform: translateY(-50%);
     width: 18px;
     height: 18px;
-    margin-left: 16px;
     fill: var(--dark-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-input:focus + .modal-input-icon {
     fill: var(--primary-brand-color);
@@ -773,7 +780,7 @@ pointer-events: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     height: 56px;
-    width: 160px;
+    min-width: 160px;
     cursor: pointer;
     font-weight: 500;
     font-size: 16px;
@@ -783,15 +790,13 @@ pointer-events: none;
     color: var(--background-color);
     border: 0px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    margin: 0 auto;
+    padding: 16px 32px 16px 32px;
 }
 .form-btn:hover, .form-btn:focus {
     background-color: var(--pressed-stade-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .modal-icon-agree {
     margin-right: 8px;
